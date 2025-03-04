@@ -1,0 +1,69 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - hey there
+      - good morning
+      - good evening
+      - good afternoon
+      - moin
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - goodafternoon
+
+  - intent: goodbye
+    examples: |
+      - see you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: ask_open_hours
+    examples: |
+      - Is restaurant open on [Monday at 12:00](date)?
+      - What are the working hours on [Monday](date)?
+      - Is restaurant open [now](date)?
+      - Is restaurant open [today](date)?
+      - Will restaurant be open [tomorrow at 12:00](date)?
+      - Are you open at [11 am](time) on [Saturday](day)?
+      - Is restaurant open on [Tuesday at noon](date)?
+      - Do you work on [March 1st at midnight](date)?
+      - Can I come on [Saturday](day) evening?
+
+  - intent: ask_menu_items
+    examples: |
+      - Please show the menu
+      - Show me the menu
+      - What's on the menu?
+      - What dishes do you have?
+      - What can I choose from?
+      - List all food options
+      - What food do you serve?
+      - List all the available dishes
+
+  - intent: place_order
+    examples: |
+      - I’d like to order a [pizza](order)
+      - Can I get a [lasagna](order)?
+      - Can I have a [burger](food_item) [with double cheese](additional_request)?
+      - I would like to order a [burger](order).
+      - Please prepare a [pizza](order).
+      - Can I order a [hotdog](order).
+      - I'd like a [spaghetti carbonara](order).
+      - I want [spaghetti carbonara](food_item), [without onions](additional_request)
+      - Give me a [hot dog](food_item) [with mustard](additional_request)
