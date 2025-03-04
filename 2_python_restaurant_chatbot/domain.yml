@@ -1,0 +1,57 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_open_hours
+  - ask_menu_items
+  - place_order
+
+entities:
+  - date
+  - order
+  - additional_request
+
+slots:
+  date:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: date
+
+  order:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: order
+
+  additional_request:
+    influence_conversation: false
+    type: text
+    mappings:
+      - type: from_entity
+        entity: additional_request
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you?"
+
+  utter_confirm_order:
+    - text: "Your order has been placed successfully."
+
+  utter_invalid_order:
+    - text: "Sorry, your item is not available. Please choose another one from menu."
+
+  utter_goodbye:
+    - text: "Bye!"
+
+actions:
+  - action_show_open_hours
+  - action_list_menu_items
+  - action_place_order
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
